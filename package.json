@@ -1,0 +1,19 @@
+{
+  "name": "yuri-platform",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "cross-env NODE_ENV=production vite preview",
+    "vite-config": "cross-env NODE_ENV=development node ./vite.config.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.42"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "vite": "^2.9.9"
+  }
+}
