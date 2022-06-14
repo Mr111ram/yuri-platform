@@ -1,5 +1,4 @@
 import 'vite/modulepreload-polyfill'
-
 class Main {
     constructor(selector='#app') {
         this.root = document.querySelector(selector)
