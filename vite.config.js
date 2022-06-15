@@ -17,9 +17,6 @@ const config = defineConfig({
         ),
         sourcemap: is_dev,
         outDir: dir`public`,
-        rollupOptions: {
-            input: dir`client/main.js`
-        },
         minify: (!is_dev || 'esnext'),
         emptyOutDir: true,
     },
