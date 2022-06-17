@@ -16,7 +16,7 @@ export default async function start_server(port) {
                 app.use(Logger({
                     transporter (str, args) {
                         if (args[2] !== '/__vite_ping') {
-                            console.log(str)
+                            console.log(str.trim())
                         }
                     }
                 }))
