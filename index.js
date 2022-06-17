@@ -5,15 +5,8 @@ const port = 3001
 const api_port = 3032
 
 async function start () {
-    return await new Promise(async (res, rej) => {
-        try {
-            res()
-            await start_server (port)
-            await api_server (api_port)
-        } catch (err) {
-            throw rej (err)
-        }
-    })
+    await start_server (port)
+    await api_server (api_port)
 }
 
 console.clear()

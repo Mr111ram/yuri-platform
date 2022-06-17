@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon --ignore public/ .",
+    "dev": "cross-env NODE_ENV=development nodemon --ignore 'client/*' .",
     "prod": "cross-env NODE_ENV=production node .",
     "vite:dev": "cross-env NODE_ENV=development vite",
     "vite:build": "cross-env NODE_ENV=production vite build",

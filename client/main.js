@@ -9,9 +9,8 @@ class Main {
     }
 }
 
-cycle : {
-    let count = 1
-    const template = `
+let count = 0
+const template = `
         <div style="
             width: 160px; 
             height: 80px; 
@@ -35,13 +34,12 @@ cycle : {
             ">:%%:</snap>     
         </div>
     `
-    const page = new Main('#app')
-    const renderer = () => {
-        count = parseInt(++count)
-        page.render(
-            template.replace(':%%:', count)
-        )
-    }
-    setInterval(renderer, 1000)
-    renderer ()
+const page = new Main('#app')
+const renderer = () => {
+    page.render(
+        template.replace(':%%:', count.toString(16).toUpperCase())
+    )
+    count++
 }
+setInterval(renderer, 1000)
+renderer ()

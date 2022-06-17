@@ -13,7 +13,13 @@ export default async function start_server(port) {
         if (mode === 'development'){
             /* Development mode */
             await dev_server().then((vite) => {
-                app.use(Logger())
+                app.use(Logger({
+                    transporter (str, args) {
+                        if (args[2] !== '/__vite_ping') {
+                            console.log(str)
+                        }
+                    }
+                }))
                 app.use(vite)
             })
         } else {
@@ -22,7 +28,7 @@ export default async function start_server(port) {
                 app.use(Static('public'))
             })
         }
-        await resolve()
+        resolve()
         app.listen(port, () => {
             console.log('platform has run on port ::%i', port)
         })
